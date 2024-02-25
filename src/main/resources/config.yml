@@ -1,0 +1,11 @@
+################################################
+#                    TITLES                    #
+#               Author: @imfanbases            #
+################################################
+
+# TITLE #
+First-Line: "&eWelcome to the server!"
+Second-Line: "&eSecond Line"
+Fade-in: 20 #How long it takes for title to fade in. e.g. 20=1s
+Stay: 100 #How long title will stay. e.g. 100=5s
+Fade-out: 20 #How long it takes title to fade out.

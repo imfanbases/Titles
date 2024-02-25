@@ -1,0 +1,4 @@
+name: Titles
+version: '${project.version}'
+main: me.fanbases.titles.Titles
+api-version: '1.20'
