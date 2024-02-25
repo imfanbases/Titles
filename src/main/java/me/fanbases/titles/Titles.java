@@ -1,19 +1,33 @@
 package me.fanbases.titles;
 
+import lombok.Getter;
+import me.fanbases.titles.Listeners.ActionBarListener;
+import me.fanbases.titles.Listeners.BossBarListener;
+import me.fanbases.titles.Listeners.TablistListener;
+import me.fanbases.titles.Listeners.TitlesListener;
 import org.bukkit.Bukkit;
-import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class Titles extends JavaPlugin implements Listener {
 
+    @Getter
+    private static Titles instance;
+
+    public Titles() {
+
+    }
+
     @Override
     public void onEnable() {
         // Plugin startup logic
+        instance = this;
         getConfig().options().copyDefaults();
         saveDefaultConfig();
-        Bukkit.getPluginManager().registerEvents(this, this);
+        Bukkit.getPluginManager().registerEvents(new TitlesListener(this), this);
+        Bukkit.getPluginManager().registerEvents(new TablistListener(this), this);
+        Bukkit.getPluginManager().registerEvents(new ActionBarListener(this), this);
+        Bukkit.getPluginManager().registerEvents(new BossBarListener(this), this);
         System.out.println("[Titles] v1.0 Plugin Loaded");
     }
 
@@ -23,9 +37,4 @@ public final class Titles extends JavaPlugin implements Listener {
         System.out.println("[Titles] v1.0 Plugin Shutdown");
     }
 
-    @EventHandler
-    public void onJoin(PlayerJoinEvent e) {
-        //When player joins, send title, register tab list and action bar.
-        e.getPlayer().sendTitle(getConfig().getString("FirstLine"), getConfig().getString("SecondLine"), getConfig().getInt("Fade-in"), getConfig().getInt("Stay"), getConfig().getInt("Fade-out"));
-    }
 }

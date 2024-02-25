@@ -9,3 +9,15 @@ Second-Line: "&eSecond Line"
 Fade-in: 20 #How long it takes for title to fade in. e.g. 20=1s
 Stay: 100 #How long title will stay. e.g. 100=5s
 Fade-out: 20 #How long it takes title to fade out.
+
+# ACTION BAR #
+Action-Bar: "&eThis is a action bar!"
+
+# TABLIST Use \n to make a new line! #
+Header: "Header!"
+Footer: "A line!"
+
+# BOSS BAR #
+Title: "Boss bar title!"
+
+################################################
