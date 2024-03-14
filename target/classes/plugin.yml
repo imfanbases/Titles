@@ -1,0 +1,4 @@
+name: Titles
+version: '1.0-SNAPSHOT'
+main: me.fanbases.titles.Titles
+api-version: '1.20'
